@@ -40,7 +40,7 @@ void radix_sort(input_type & x)
 
         // 1. determine which bucket each element should enter
         // for each element in 'x':
-        for(input_type::const_iterator elem = x.begin(); elem != x.end(); ++elem) {
+        for(auto elem = x.begin(); elem != x.end(); ++elem) {
 
                 // Use rightmost digit to determine bucket number
                 int const bucket_num = ( *elem / pow10 ) % 10;
@@ -53,7 +53,7 @@ void radix_sort(input_type & x)
         input_type::iterator store_pos = x.begin();
 
         // for each bucket:
-        for(buckets_type::iterator bucket = buckets.begin(); bucket != buckets.end(); ++bucket) {
+        for(auto bucket = buckets.begin(); bucket != buckets.end(); ++bucket) {
 
                 // for each element in the bucket:
                 for(buckets_type::value_type::const_iterator bucket_elem = bucket->begin();
